@@ -101,4 +101,5 @@ if (Notification.permission === "granted"){
     document.getElementById('break').play();
   else
     document.getElementById('work').play();
+  setTimeout(stop, 2000);
 }
