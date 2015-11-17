@@ -1,3 +1,4 @@
+[![Code Climate](https://codeclimate.com/github/rougetimelord/tomodoro/badges/gpa.svg)](https://codeclimate.com/github/rougetimelord/tomodoro)
 # Tomodoro
 Tomodoro timer implementation inspired heavily by [tomato-timer.com](http://tomato-timer.com/#)
 
