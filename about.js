@@ -14,13 +14,13 @@ var aboutFunc = function() {
       link.innerText="About";
       first = false;
     }
-    document.getElementById('disp').style = "transition: 1s ease-in-out;transform: scale(1);"
+    document.getElementById('disp').style = "-webkit-transition: 1s ease-in-out; -webkit-transform: scale(1);"
     document.getElementById('about').innerHTML="";
     shown=false;;
   }
   else
   {
-    document.getElementById('disp').style = "transition: 1s ease-in-out;transform: scale(.5);"
+    document.getElementById('disp').style = "-webkit-transition: 1s ease-in-out; -webkit-transform: scale(.5);"
     document.getElementById('about').innerHTML=st;
     shown = true;
   }
