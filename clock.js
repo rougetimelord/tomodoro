@@ -25,8 +25,7 @@ function update(){
   {
     if(r === 0)
     {
-      if (Notification.permission === "granted")
-      {alarm(txt);}
+      alarm(txt);
       txt = "Grace period";
       m = 0;
       s = 15;
