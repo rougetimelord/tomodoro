@@ -1,5 +1,5 @@
-body, #disp{text-align:center;list-style-position:inside;background-color:#ffffff;font-size:2em;overflow-y:hidden;}
-#disp{margin:25px;}
+body{text-align:center;list-style-position:inside;background-color:#ffffff;overflow-y:hidden;}
+#disp{margin:auto;font-size:2em;}
 #about, #txt{font-size:1em !important;}
 #about {overflow-y:auto;}
 a{color:#2f4f4f;}
