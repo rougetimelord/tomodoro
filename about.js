@@ -14,13 +14,13 @@ var aboutFunc = function() {
       link.innerText="About";
       first = false;
     }
-    //document.getElementById('disp').style.fontsize = "6em";
+    document.getElementById('disp').style.fontSize = "6em";
     document.getElementById('about').innerHTML="";
     shown=false;;
   }
   else
   {
-    //document.getElementById('disp').style.fontsize = "1.5em";
+    document.getElementById('disp').style.fontSize = "1.5em";
     document.getElementById('about').innerHTML=st;
     shown = true;
   }
