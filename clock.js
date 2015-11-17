@@ -91,10 +91,12 @@ function alarm(a)
 {
   var stop = function(){document.getElementById('break').pause();document.getElementById('work').pause();document.getElementById('break').currentTime = 0;document.getElementById('work').currentTime = 0;};
   var ntxt = a + " is over";
+if(-webkit-.Notification)
+var note = new -webkit-.Notification((!br)?"Time to take 
+a break":"Time to get back to work",
+  {icon: 'https://cdn2.iconfinder.com/data/icons/medicine-7/512/buzzer-2-512.png',body:ntxt});
 if(window.Notification)
   var note = new Notification((!br)?"Time to take 
-else
-  var note = 0;
 a break":"Time to get back to work",
   {icon: 'https://cdn2.iconfinder.com/data/icons/medicine-7/512/buzzer-2-512.png',body:ntxt});
   note.onshow = function () {setTimeout(note.close.bind(note), 2000);};
