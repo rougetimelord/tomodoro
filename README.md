@@ -21,3 +21,4 @@ Tomodoro timer implementation inspired heavily by [tomato-timer.com](http://toma
 - Constant ticking (?)
 - Cookies for progress/left off phase
 - User can set work, and break lengths
+- Scaling Display
