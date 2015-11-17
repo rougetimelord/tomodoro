@@ -14,13 +14,13 @@ var aboutFunc = function() {
       link.innerText="About";
       first = false;
     }
-    document.getElementById('disp').style.transform = "scale(1,1)";
+    //document.getElementById('disp').style.transform = "scale(1,1)";
     document.getElementById('about').innerHTML="";
     shown=false;;
   }
   else
   {
-    document.getElementById('disp').style.transform = "scale(.5,.5)";
+    //document.getElementById('disp').style.transform = "scale(.5,.5)";
     document.getElementById('about').innerHTML=st;
     shown = true;
   }
