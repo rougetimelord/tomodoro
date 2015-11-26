@@ -9,6 +9,13 @@ var start = 1;
 document.addEventListener('DOMContentLoaded', function () {
   if (Notification.permission !== "granted")
     Notification.requestPermission();});
+window.addEventListener('beforeunload', function(e) {
+  if(!br)
+  {
+    e.returnValue 'Are you really done with your work?';
+    return 'Are you really done with your work?';
+  }
+});
 (function(){
   var loop = setInterval(function(){tick()},1000);
 })();
@@ -25,8 +32,7 @@ function update(){
   {
     if(r === 0)
     {
-      if (Notification.permission === "granted")
-      {alarm(txt);}
+      alarm(txt);
       txt = "Grace period";
       m = 0;
       s = 15;
@@ -91,30 +97,8 @@ function alarm(a)
 {
   var stop = function(){document.getElementById('break').pause();document.getElementById('work').pause();document.getElementById('break').currentTime = 0;document.getElementById('work').currentTime = 0;};
   var ntxt = a + " is over";
-if(window.Push)
-{
-    navigator.serviceWorker.register('/tomodoro/serviceWorker.js').then(
-      function (serviceWorkerRegistration) {
-          serviceWorkerRegistration.pushManager.subscribe().then(
-            function (pushSubscription) {
-                console.log(pushSubscription.endpoint);
-                // The push subscription details needed by the application
-                // server are now available, and can be sent to it using,
-                // for example, an XMLHttpRequest.
-            }, function (error) {
-                // During development it often helps to log errors to the
-                // console. In a production environment it might make sense to
-                // also report information about errors back to the
-                // application server.
-                console.log(error);
-            }
-          );
-      });
-}
-else
-{
+if (Notification.permission === "granted"){
   var note = new Notification((!br)?"Time to take a break":"Time to get back to work",{icon: 'https://cdn2.iconfinder.com/data/icons/medicine-7/512/buzzer-2-512.png',body:ntxt});
-  note.onshow = function () { setTimeout(note.close.bind(note), 2000); };
   note.addEventListener('show', function () { setTimeout(note.close.bind(note), 2000) });
   note.addEventListener('click', stop);
   note.addEventListener('close', stop);
@@ -123,4 +107,5 @@ else
     document.getElementById('break').play();
   else
     document.getElementById('work').play();
+  setTimeout(stop, 2000);
 }
