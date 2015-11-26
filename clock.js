@@ -15,7 +15,7 @@ window.addEventListener('beforeunload', function(e) {
     e.returnValue 'Are you really done with your work?';
     return 'Are you really done with your work?';
   }
-})
+});
 (function(){
   var loop = setInterval(function(){tick()},1000);
 })();
