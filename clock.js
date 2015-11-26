@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function () {
 window.addEventListener('beforeunload', function(e) {
   if(!br)
   {
-    e.returnValue 'Are you really done with your work?';
+    e.returnValue = 'Are you really done with your work?';
     return 'Are you really done with your work?';
   }
 });
