@@ -11,11 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
     Notification.requestPermission();});
 window.addEventListener('beforeunload', function(e) {
   if(!br)
-  {
-    e.returnValue 'Are you really done with your work?';
-    return 'Are you really done with your work?';
-  }
-});
+    return 'Are you really done with your work?';});
 (function(){
   var loop = setInterval(function(){tick()},1000);
 })();
