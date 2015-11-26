@@ -36,8 +36,7 @@ function update(){
     }
     if(start == 1)
     {
-      if (Notification.permission === "granted")
-      {alarm(txt);}
+      alarm(txt);
       start = 0;
     }
     if(r == 1 && s !== 15)
@@ -75,33 +74,39 @@ function update(){
 }
 function format()
 {
-  switch(true){
-  case(s<=0 && m !== 0):
-    s = 60;
-    break;
-  case(s<=9):
-    ds = String("0" + s);
-    break;
-  case(s >= 60):
-    ds = String("00");
-    break;
-  default:
-    ds = String(s);
-  }
+    switch (true) {
+        case (s <= 0 && m !== 0):
+            s = 60;
+            break;
+        case (s <= 9):
+            ds = String("0" + s);
+            break;
+        case (s >= 60):
+            ds = String("00");
+            break;
+        default:
+            ds = String(s);
+            break;
+    }
 }
 function alarm(a)
 {
-  var stop = function(){document.getElementById('break').pause();document.getElementById('work').pause();document.getElementById('break').currentTime = 0;document.getElementById('work').currentTime = 0;};
-  var ntxt = a + " is over";
-if (Notification.permission === "granted"){
-  var note = new Notification((!br)?"Time to take a break":"Time to get back to work",{icon: 'https://cdn2.iconfinder.com/data/icons/medicine-7/512/buzzer-2-512.png',body:ntxt});
-  note.addEventListener('show', function () { setTimeout(note.close.bind(note), 2000) });
-  note.addEventListener('click', stop);
-  note.addEventListener('close', stop);
-}
-  if(!br)
-    document.getElementById('break').play();
-  else
-    document.getElementById('work').play();
-  setTimeout(stop, 2000);
+    var stop = function () {
+        document.getElementById('break').pause();
+        document.getElementById('work').pause();
+        document.getElementById('break').currentTime = 0;
+        document.getElementById('work').currentTime = 0;
+    };
+    var ntxt = a + " is over";
+    if (Notification.permission === "granted") {
+      var note = new Notification((!br) ? "Time to take a break" : "Time to get back to work", { icon: 'https://cdn2.iconfinder.com/data/icons/medicine-7/512/buzzer-2-512.png', body: ntxt });
+      note.addEventListener('show', function () { setTimeout(note.close.bind(note), 2000) });
+      note.addEventListener('click', stop);
+      note.addEventListener('close', stop);
+    }
+    if (!br)
+        document.getElementById('break').play();
+    else
+        document.getElementById('work').play();
+    setTimeout(stop, 2000);
 }
