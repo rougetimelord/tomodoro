@@ -2,7 +2,7 @@ var m = 0, s = 15, r = 1, ds = "00", c = 0, br = !0, txt = "First grace period",
 function update() { 0 === m && 0 >= s && (0 === r && (alarm(txt), txt = "Grace period", m = 0, s = 15, r = 1), 1 == start && (alarm(txt), start = 0), 1 == r && 15 !== s && (br || (3 > c ? (txt = "Short break", m = 5) : (txt = "Long break", c = 0, m = 10), s = 60, c++, br = !0), br && 0 === m && (br = !1, txt = "Work time", m = 25, s = 60), r = 0), document.getElementById("txt").innerText = txt); format(); document.getElementById("disp").innerText = m + ":" + ds } function format() { switch (!0) { case 0 >= s && 0 !== m: s = 60; break; case 9 >= s: ds = String("0" + s); break; case 60 <= s: ds = "00"; break; default: ds = String(s) } }
 function alarm(b) {
     var d = function () { document.getElementById("break").pause(); document.getElementById("work").pause(); document.getElementById("break").currentTime = 0; document.getElementById("work").currentTime = 0 }; b += " is over"; if ("granted" === Notification.permission) {
-        var a = new Notification(br ? "Time to get back to work" : "Time to take a break", { icon: "https://cdn2.iconfinder.com/data/icons/medicine-7/512/buzzer-2-512.png", body: b }); a.addEventListener("show", function () { setTimeout(a.close.bind(a), 2E3) }); a.addEventListener("click",
+        var a = new Notification(br ? "Time to get back to work" : "Time to take a break", { icon: "/tomodoro/clock.png", body: b }); a.addEventListener("show", function () { setTimeout(a.close.bind(a), 2E3) }); a.addEventListener("click",
         d); a.addEventListener("close", d)
     } br ? document.getElementById("work").play() : document.getElementById("break").play(); setTimeout(d, 2E3)
 };
