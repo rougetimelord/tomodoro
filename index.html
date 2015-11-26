@@ -1,20 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html manifest="/tomodoro/index.appcache">
 <head>
-  <link rel="stylesheet" type="text/css" href="/tomodoro/index.css">
-  <link rel="shortcut icon" href="http://pre12.deviantart.net/84cf/th/pre/i/2012/220/4/a/kawaii_tomato_by_chloeisabunny-d5acj0n.png">
-<title>Simple Tomato</title>
-<script src="/tomodoro/clock.js"></script>
-<script src="/tomodoro/about.js"></script>
+    <link rel="stylesheet" type="text/css" href="/tomodoro/index.css">
+    <link rel="shortcut icon" href="/tomodoro/icon.png">
+    <title>Simple Tomato</title>
+    <script src="/tomodoro/clock.js"></script>
+    <script src="/tomodoro/about.js"></script>
 </head>
-<body>
-<p id="disp">0:15</p>
-<p id="txt">First grace period, get ready to work</p>
-<div id="link">
-<a href="javascript:void(0);" id="aboutLink" onclick="aboutFunc()">About (Click me)</a>
-</p>
-<div id="about"></div>
-<audio id="break" src="http://onlineclock.net/audio/options/harp-strumming.mp3" preload="auto"></audio>
-<audio id="work" src="http://onlineclock.net/audio/options/default.mp3" preload="auto"></audio>
-</body>
+    <body>
+            <p id="disp">0:15</p>
+            <p id="txt">First grace period, get ready to work</p>
+            <div id="link">
+                        <a href="javascript:void(0);" id="aboutLink" onclick="aboutFunc()">About (Click me)</a>
+                </div>
+            <div id="about"></div>
+        <audio id="break" src="/tomodoro/break.mp3" preload="auto" type="audio/mpeg"></audio>
+        <audio id="work" src="/tomodoro/work.mp3" preload="auto" type="audio/mpeg"></audio>
+    </body>
 </html>

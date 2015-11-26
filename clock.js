@@ -99,7 +99,7 @@ function alarm(a)
     };
     var ntxt = a + " is over";
     if (Notification.permission === "granted") {
-      var note = new Notification((!br) ? "Time to take a break" : "Time to get back to work", { icon: 'https://cdn2.iconfinder.com/data/icons/medicine-7/512/buzzer-2-512.png', body: ntxt });
+        var note = new Notification((!br) ? "Time to take a break" : "Time to get back to work", { icon: '/tomodoro/clock.png', body: ntxt });
       note.addEventListener('show', function () { setTimeout(note.close.bind(note), 2000) });
       note.addEventListener('click', stop);
       note.addEventListener('close', stop);
