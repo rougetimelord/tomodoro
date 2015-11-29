@@ -1,5 +1,9 @@
 CACHE MANIFEST
+<<<<<<< HEAD
 # 2015-11-28 v0.1.2
+=======
+# 2015-11-28 v0.1.1
+>>>>>>> b5281c5578ca7ea0f50e123e3c0d010c74729f2f
 /tomodoro/about.js
 /tomodoro/clock.js
 /tomodoro/index.css
