@@ -2,7 +2,17 @@ window.onload = function()
 {
     var shown = false;
     var link = document.getElementById('aboutLink');
-    link.addEventListener('click', function () { (!shown) ? (about.show(), shown = true) : (about.hide(), shown = false) }, 'false')
+    link.addEventListener('click', function () {
+        var r = Math.floor((Math.random() * 10) + 1);
+        switch (r) {
+            case (1):
+                window.open("https://youtu.be/dQw4w9WgXcQ", '_blank');
+                break;
+            default:
+                (!shown) ? (about.show(), shown = true) : (about.hide(), shown = false);
+                break;
+        }
+    }, 'false')
 }
 var about = (function(){
     var first = true;
