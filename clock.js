@@ -1,31 +1,112 @@
+var m = 0;
+var s = 15;
+var r = 1;
+var ds = "00";
+var c = 0;
+var br = true;
+var txt = "First grace period";
+var start = 1;
 document.addEventListener('DOMContentLoaded', function () {
-    if (Notification.permission !== "granted")
-        Notification.requestPermission();
-    clockHook();
-});
-function clockHook() {
-    var _disp = document.getElementById('disp'), _workA = document.getElementById('work'), _breakA = document.getElementById('break');
-    var _s = 15;
-    var _m = 0;
-    var loop = setInterval(function () { tick(_s, _m); }, 1000);
-};
-var tick = function (passS, passM) {
-    var _s = passS, _m = passM;
-    var _ds;
-    _s--;
+  if (Notification.permission !== "granted")
+    Notification.requestPermission();});
+window.addEventListener('beforeunload', function(e) {
+  if(!br)
+    return 'Are you really done with your work?';});
+(function(){
+  var loop = setInterval(function(){tick()},1000);
+})();
+function tick(){
+  s--;
+  if(s==59)
+  {
+    m--;
+  }
+  update();
+}
+function update(){
+  if(m === 0 && s <= 0)
+  {
+    if(r === 0)
+    {
+      alarm(txt);
+      txt = "Grace period";
+      m = 0;
+      s = 15;
+      r = 1;
+    }
+    if(start == 1)
+    {
+      alarm(txt);
+      start = 0;
+    }
+    if(r == 1 && s !== 15)
+    {
+      if(!br)
+      {
+        if(c<3)
+        {
+          txt = "Short break";
+          m = 5;
+        }
+        else
+        {
+          txt = "Long break";
+          c = 0;
+          m = 10;
+        }
+        s = 60;
+        c++;
+        br= true;
+      }
+      if(br && m === 0)
+      {
+        br = false;
+        txt = "Work time";
+        m=25;
+        s = 60;
+      }
+      r=0;
+    }
+    document.getElementById('txt').innerText = txt;
+  }
+  format();
+  document.getElementById("disp").innerText = m + ":" + ds;
+}
+function format()
+{
     switch (true) {
-        case (_s <= 0 && _m !== 0):
-            _s = 60;
-            _ds = String("00");
+        case (s <= 0 && m !== 0):
+            s = 60;
             break;
-        case (_s <= 9):
-            _ds = String("0" + _s);
+        case (s <= 9):
+            ds = String("0" + s);
+            break;
+        case (s >= 60):
+            ds = String("00");
             break;
         default:
-            _ds = String(_s);
+            ds = String(s);
             break;
     }
-    if (_s = 59 && _m !== 0)
-        _m--;
-    return { m: _m, ds: _ds, s: _s};
+}
+function alarm(a)
+{
+    var stop = function () {
+        document.getElementById('break').pause();
+        document.getElementById('work').pause();
+        document.getElementById('break').currentTime = 0;
+        document.getElementById('work').currentTime = 0;
+    };
+    var ntxt = a + " is over";
+    if (Notification.permission === "granted") {
+        var note = new Notification((!br) ? "Time to take a break" : "Time to get back to work", { icon: '/tomodoro/Content/clock.png', body: ntxt });
+      note.addEventListener('show', function () { setTimeout(note.close.bind(note), 2000) });
+      note.addEventListener('click', stop);
+      note.addEventListener('close', stop);
+    }
+    if (!br)
+        document.getElementById('break').play();
+    else
+        document.getElementById('work').play();
+    setTimeout(stop, 2000);
 }
