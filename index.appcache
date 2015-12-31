@@ -8,6 +8,8 @@ CACHE MANIFEST
 /tomodoro/Content/icon.png
 /tomodoro/Content/clock.png
 /tomodoro/Content/mute.png
+/tomodoro/Content/mute_hover.png
+/tomodoro/Content/mute_active.png
 
 NETWORK:
 *
