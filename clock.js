@@ -1,4 +1,5 @@
 (function () {
+    var mute = false, muteSt;
     var m = 0;
     var s = 15;
     var r = 1;
@@ -10,6 +11,8 @@
     document.addEventListener('DOMContentLoaded', function () {
         if (Notification.permission !== "granted")
             Notification.requestPermission();
+        muteSt = document.getElementById('muteSt');
+        document.getElementById('mute').addEventListener('click', function () { mute = !mute; (mute) ? (muteSt.innerHTML = 'Muted', muteSt.style.marginBottom = ".65em") : (muteSt.innerHTML = '', muteSt.style.marginBottom = "1.75em")});
     });
     window.addEventListener('beforeunload', function (e) {
         if (!br)
@@ -97,10 +100,12 @@
             note.addEventListener('click', stop);
             note.addEventListener('close', stop);
         }
-        if (!br)
-            document.getElementById('break').play();
-        else
-            document.getElementById('work').play();
-        setTimeout(stop, 2000);
+        if (!mute) {
+            if (!br)
+                document.getElementById('break').play();
+            else
+                document.getElementById('work').play();
+            setTimeout(stop, 2000);
+        }
     }
 }());
