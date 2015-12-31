@@ -1,5 +1,5 @@
 (function () {
-    var mute = false;
+    var mute = false, muteSt;
     var m = 0;
     var s = 15;
     var r = 1;
@@ -11,7 +11,8 @@
     document.addEventListener('DOMContentLoaded', function () {
         if (Notification.permission !== "granted")
             Notification.requestPermission();
-        document.getElementById('mute').addEventListener('click', function () { mute = !mute; (mute)?document.getElementById('muteStatus').innerText = 'muted':document.getElementById('muteStatus').innerText = ''});
+        muteSt = document.getElementById('muteSt');
+        document.getElementById('mute').addEventListener('click', function () { mute = !mute; (mute) ? (muteSt.innerHTML = 'Muted', muteSt.style.marginBottom = ".65em") : (muteSt.innerHTML = '', muteSt.style.marginBottom = "1.75em")});
     });
     window.addEventListener('beforeunload', function (e) {
         if (!br)
