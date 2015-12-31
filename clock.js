@@ -11,7 +11,7 @@
     document.addEventListener('DOMContentLoaded', function () {
         if (Notification.permission !== "granted")
             Notification.requestPermission();
-        document.getElementById('mute').addEventListener('click', function () { mute = !mute; });
+        document.getElementById('mute').addEventListener('click', function () { mute = !mute; (mute)?document.getElementById('muteStatus').innerText = 'muted':document.getElementById('muteStatus').innerText = ''});
     });
     window.addEventListener('beforeunload', function (e) {
         if (!br)
