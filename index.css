@@ -1,6 +1,8 @@
 body{text-align:center;list-style-position:inside;background-color:#ffffff;overflow-y:auto;}
 #disp{margin:auto; font-size:6em;}
 #about, #txt{font-size:1.5em;}
+div#pre{background: url('./Content/mute_hover.png') no-repeat -9999px -9999px}
+div#pre2{background: url('./Content/mute_hover.png') no-repeat -9999px -9999px}
 #mute {max-height:128px;max-width:128px;height:5vmin;width:5vmin;margin-bottom:.5em;margin-top:-.5em;}
     #mute:hover{content:url('./Content/mute_hover.png');}
     #mute:active{content: url('./Content/mute_active.png');}
