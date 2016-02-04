@@ -17,7 +17,7 @@
         document.getElementById('toggle').addEventListener('click', function () { var btn = document.getElementById('toggle'); if (!running) { interval = setInterval(function () { tick() }, 1000); btn.style.content = "url(./Content/pause.png)"; } else { clearInterval(interval); btn.style.content = "url(./Content/play.png)"; } running = !running; btn.classList.toggle('pause'); btn.classList.toggle('play')});
     });
     window.addEventListener('beforeunload', function (e) {
-        if (!br) {
+        if (!br && running) {
             e.returnValue = 'Are you really done with your work?';
             return 'Are you really done with your work?';
         }
