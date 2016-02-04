@@ -1,5 +1,5 @@
 CACHE MANIFEST
-# 2016-1-6 v0.1.8-Fixed
+# 2016-2-3 v0.2.0-alpha
 /tomodoro/about.js
 /tomodoro/clock.js
 /tomodoro/index.css
@@ -10,6 +10,8 @@ CACHE MANIFEST
 /tomodoro/Content/mute.png
 /tomodoro/Content/mute_hover.png
 /tomodoro/Content/mute_active.png
+/tomodoro/Content/play.png
+/tomodoro/Content/pause.png
 
 NETWORK:
 *
