@@ -36,3 +36,8 @@ var about = (function(){
         }
     }
 }());
+window.addEventListener('keypress', function (e) { keyPress(e) })
+function keyPress(event)
+{
+    event.charCode;
+}
