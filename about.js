@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function()
         }
     }, 'false')
     var count = 0;
-    window.addEventListener("keyup", function (e) { count = keyPress(e, count, shown);});
+    window.addEventListener("keyup", function (e) { count = keyPress(e, count);});
 }
 )
 var about = (function(){
@@ -35,17 +35,10 @@ var about = (function(){
             }
             document.getElementById('disp').style.fontSize = "6em";
             document.getElementById('about').innerHTML = "";
-        },
-        showKonami: function (a) {
-            st = "UNLOCKED EXTRA TIME<br>" + st;
-            if (a)
-                document.getElementById('about').innerHTML = st;
-            else
-                document.getElementById('about').innerHTML = "UNLOCKED EXTRA TIME";
         }
     }
 }());
-function keyPress(event, c, s)
+function keyPress(event, c)
 {
     var key = event.keyCode;
     var need = (c <= 1) ? 38 : (c <= 3) ? 40 : (c == 4) ? 37 : (c == 5) ? 39 : (c == 6) ? 37 : (c == 7) ? 39 : (c == 8) ? 66 : (c == 9) ? 65 : 13;
@@ -54,7 +47,15 @@ function keyPress(event, c, s)
     else
         c = 0;
     if (c == 11) {
-        window.about.showKonami(s);
+        if (run != true) {
+            var run = true;
+            var swischer = false;
+            var flasher = setInterval(function () { var img = (swischer == false) ? "/Content/heman.gif" : "/Constent/frog.png"; var st = "url('" + img + "') repeat right-top"; document.body.background = st; swischer = !swischer; }, 1000);
+        }
+        else {
+            clearInterval(flasher)
+            run = false;
+        }
         c == 0;
     }
     return c;
