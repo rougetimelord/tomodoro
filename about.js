@@ -50,7 +50,7 @@ function keyPress(event, c)
         if (run != true) {
             var run = true;
             var swischer = false;
-            var flasher = setInterval(function () { var img = (swischer == false) ? "/Content/heman.gif" : "/Constent/frog.png"; document.body.style.background = "url('" + img + "') repeat right top"; swischer = !swischer; }, 2500);
+            var flasher = setInterval(function () { var img = (swischer == false) ? "./Content/heman.gif" : "./Content/frog.png"; document.body.style.background = "url('" + img + "') repeat right top"; swischer = !swischer; }, 2500);
         }
         else {
             clearInterval(flasher)
