@@ -47,16 +47,18 @@ function keyPress(event, c)
     else
         c = 0;
     if (c == 11) {
-        if (run != true) {
+        if (typeof run == undefined)
             var run = true;
+        if (run == true) {
             var swischer = false;
             var flasher = setInterval(function () { var img = (swischer == false) ? "./Content/heman.gif" : "./Content/frog.png"; document.body.style.background = "url('" + img + "') repeat right top"; swischer = !swischer; }, 2500);
         }
-        else {
-            clearInterval(flasher)
-            run = false;
+        if(run == false) {
+            clearInterval(flasher);
+            document.body.style.background = "";
         }
-        c == 0;
+        run = !run;
+        c = 0;
     }
     return c;
 }
