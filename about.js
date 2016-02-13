@@ -38,6 +38,7 @@ var about = (function(){
         }
     }
 }());
+var run = true;
 function keyPress(event, c)
 {
     var key = event.keyCode;
@@ -47,8 +48,6 @@ function keyPress(event, c)
     else
         c = 0;
     if (c == 11) {
-        if (typeof run == undefined)
-            var run = true;
         if (run == true) {
             var swischer = false;
             var flasher = setInterval(function () { var img = (swischer == false) ? "./Content/heman.gif" : "./Content/frog.png"; document.body.style.background = "url('" + img + "') repeat right top"; swischer = !swischer; }, 2500);
