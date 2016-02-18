@@ -39,6 +39,7 @@ var about = (function(){
     }
 }());
 var run = true;
+var flasher;
 function keyPress(event, c)
 {
     var key = event.keyCode;
@@ -50,7 +51,7 @@ function keyPress(event, c)
     if (c == 11) {
         if (run == true) {
             var swischer = false;
-            var flasher = setInterval(function () { var img = (swischer == false) ? "./Content/heman.gif" : "./Content/frog.png"; document.body.style.background = "url('" + img + "') repeat right top"; swischer = !swischer; }, 2500);
+            flasher = setInterval(function () { var img = (swischer == false) ? "./Content/heman.gif" : "./Content/frog.png"; document.body.style.background = "url('" + img + "') repeat right top"; swischer = !swischer; }, 2500);
         }
         if(run == false) {
             clearInterval(flasher);
