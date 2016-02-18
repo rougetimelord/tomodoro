@@ -22,6 +22,19 @@ this.addEventListener('install', function (event) {
       })
     );
 });
+this.addEventListener('activate', function (event) {
+    var cacheWhitelist = ['v1'];
+
+    event.waitUntil(
+      caches.keys().then(function (keyList) {
+          return Promise.all(keyList.map(function (key) {
+              if (cacheWhitelist.indexOf(key) === -1) {
+                  return caches.delete(key);
+              }
+          }));
+      })
+    );
+});
 this.addEventListener('fetch', function(event) {
     event.respondWith(
       caches.match(event.request).catch(function () {
