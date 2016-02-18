@@ -1,5 +1,7 @@
 # Tomodoro
-Tomodoro timer implementation
+Tomodoro timer implementation.
+
+[Live version](http://rougetimelord.github.io/tomodoro/)
 
 # How to update
 1. Change files on master
