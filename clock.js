@@ -1,3 +1,5 @@
+var br = true;
+var running = false;
 (function () {
     var mute = false, muteSt;
     var m = 0;
@@ -5,23 +7,15 @@
     var r = 1;
     var ds = "00";
     var c = 0;
-    var br = true;
     var txt = "First grace period";
     var start = 1;
-    var running = false;
-    document.addEventListener('DOMContentLoaded', function () {
+    (function () {
         if (Notification.permission !== "granted")
             Notification.requestPermission();
         muteSt = document.getElementById('muteSt');
         document.getElementById('mute').addEventListener('click', function () { mute = !mute; (mute) ? (muteSt.innerHTML = 'Muted', muteSt.style.marginBottom = ".65em") : (muteSt.innerHTML = '', muteSt.style.marginBottom = "1.75em") });
-        document.getElementById('toggle').addEventListener('click', function () { var btn = document.getElementById('toggle'); if (!running) { interval = setInterval(function () { tick() }, 1000); btn.style.content = "url(./Content/pause.png)"; } else { clearInterval(interval); btn.style.content = "url(./Content/play.png)"; } running = !running; btn.classList.toggle('pause'); btn.classList.toggle('play')});
-    });
-    window.addEventListener('beforeunload', function (e) {
-        if (!br && running) {
-            e.returnValue = 'Are you really done with your work?';
-            return 'Are you really done with your work?';
-        }
-    });
+        document.getElementById('toggle').addEventListener('click', function () { var btn = document.getElementById('toggle'); if (!running) { interval = setInterval(function () { tick() }, 1000); btn.style.content = "url(./Content/pause.png)"; } else { clearInterval(interval); btn.style.content = "url(./Content/play.png)"; } running = !running; btn.classList.toggle('pause'); btn.classList.toggle('play') });
+    }());
     function tick() {
         s--;
         update();

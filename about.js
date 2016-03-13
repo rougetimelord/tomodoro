@@ -14,7 +14,13 @@ document.addEventListener('DOMContentLoaded', function ()
         }
     }, 'false')
     var count = 0;
-    window.addEventListener("keyup", function (e) { count = keyPress(e, count);});
+    window.addEventListener("keyup", function (e) { count = keyPress(e, count); });
+    window.addEventListener('beforeunload', function (e) {
+        if (!br && running) {
+            e.returnValue = 'Are you really done with your work?';
+            return 'Are you really done with your work?';
+        }
+    });
 }
 )
 var about = (function(){
