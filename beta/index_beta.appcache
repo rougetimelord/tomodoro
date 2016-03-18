@@ -1,9 +1,9 @@
 CACHE MANIFEST
-# 2016-3-17 v0.0.1_base_beta
+# 2016-3-17 v0.0.1.4_base_beta
 # Add beta flag
-beta/about_beta.js
-beta/clock_beta.js
-beta/index_beta.css
+/tomodoro/beta/about_beta.js
+/tomodoro/beta/clock_beta.js
+/tomodoro/beta/index_beta.css
 /tomodoro/Content/break.mp3
 /tomodoro/Content/work.mp3
 /tomodoro/Content/icon.png
@@ -17,6 +17,8 @@ beta/index_beta.css
 /tomodoro/Content/mute_active.png
 /tomodoro/Content/play_active.png
 /tomodoro/Content/pause_active.png
+/tomodoro/Content/heman.gif
+/tomodoro/Content/frog.png
 
 
 NETWORK:
