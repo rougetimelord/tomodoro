@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html manifest="./index_beta.appcache">
+<head>
+    <link rel="stylesheet" type="text/css" href="./index_beta.css">
+    <link rel="icon" href="../Content/icon.png">
+    <title>Simple Tomato</title>
+    <script src="./clock_beta.js" async></script>
+    <script src="./about_beta.js" ></script>
+</head>
+    <body>
+        <p id="disp">0:15</p>
+        <p id="txt">First grace period, get ready to work</p>
+        <div id="buttons">
+            <img src="../Content/mute.png" id="mute" class="interact" alt="Mute alarms" />
+            <img src="../Content/play.png" id="toggle" class="interact play" alt="Pause timer"/>
+        </div>
+        <div id="muteSt"></div>
+        <div id="link" class="interact">
+            <a href="javascript:void(0);" id="aboutLink">About (Click me)</a>
+        </div>
+        <div id="about"></div>
+        <audio id="break" src="../Content/break.mp3" preload="auto" type="audio/mpeg"></audio>
+        <audio id="work" src="../Content/work.mp3" preload="auto" type="audio/mpeg"></audio>
+        <div id="pre"/>
+        <div id="pre2"/>
+        <div id="pre3"/>
+    </body>
+</html>
