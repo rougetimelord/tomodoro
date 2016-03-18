@@ -1,5 +1,5 @@
 CACHE MANIFEST
-# 2016-3-17 v0.0.1_base_beta
+# 2016-3-17 v0.0.1.1_base_beta
 # Add beta flag
 ./about_beta.js
 ./clock_beta.js
