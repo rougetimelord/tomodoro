@@ -1,17 +1,17 @@
 body{text-align:center;list-style-position:inside;background-color:#ffffff;overflow-y:auto;}
 #disp{margin:auto; font-size:6em;}
 #about, #txt{font-size:1.5em;}
-div#pre{background: url('/tomodoro/Content/mute_hover.png') no-repeat -9999px -9999px}
-div#pre2{background: url('/tomodoro/Content/mute_active.png') no-repeat -9999px -9999px}
-div#pre3 {background: url('/tomodoro/Content/pause.png') no-repeat -9999px -9999px;}
+div#pre{background: url('../tomodoro/Content/mute_hover.png') no-repeat -9999px -9999px}
+div#pre2{background: url('../tomodoro/Content/mute_active.png') no-repeat -9999px -9999px}
+div#pre3 {background: url('../tomodoro/Content/pause.png') no-repeat -9999px -9999px;}
 #mute {max-height:128px;max-width:128px;height:5vmin;width:5vmin;margin-bottom:.5em;margin-top:-0.5em;margin-right:0.25vmin}
-    #mute:hover{content:url('/tomodoro/Content/mute_hover.png');}
-    #mute:active{content: url('/tomodoro/Content/mute_active.png');}
+    #mute:hover{content:url('../tomodoro/Content/mute_hover.png');}
+    #mute:active{content: url('../tomodoro/Content/mute_active.png');}
 #toggle {max-height:96px;max-width:96px;height:3.75vmin;width:3.75vmin;margin-bottom:.75em;margin-top:-0.5em;margin-left:0.25vmin}
-    .pause:hover {content: url('/tomodoro/Content/pause_hover.png') !important;}
-    .pause:active {content: url('/tomodoro/Content/pause_active.png') !important;}
-    .play:hover {content: url('/tomodoro/Content/play_hover.png') !important;}
-    .play:active {content: url('/tomodoro/Content/play_active.png') !important;}
+    .pause:hover {content: url('../tomodoro/Content/pause_hover.png') !important;}
+    .pause:active {content: url('../tomodoro/Content/pause_active.png') !important;}
+    .play:hover {content: url('../tomodoro/Content/play_hover.png') !important;}
+    .play:active {content: url('../tomodoro/Content/play_active.png') !important;}
 #muteSt {margin-bottom:1.75em;margin-top:0px;}
 a{color:#2f4f4f;font-size:1.5em;}
 a:link{text-decoration:none;}
