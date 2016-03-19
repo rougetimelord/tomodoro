@@ -14,7 +14,7 @@ var running = false;
             Notification.requestPermission();
         muteSt = document.getElementById('muteSt');
         document.getElementById('mute').addEventListener('click', function () { mute = !mute; (mute) ? (muteSt.innerHTML = 'Muted', muteSt.style.marginBottom = ".65em") : (muteSt.innerHTML = '', muteSt.style.marginBottom = "1.75em") });
-        document.getElementById('toggle').addEventListener('click', function () { var btn = document.getElementById('toggle'); if (!running) { interval = setInterval(function () { tick() }, 1000); btn.style.content = "url(./Content/pause.png)"; } else { clearInterval(interval); btn.style.content = "url(./Content/play.png)"; } running = !running; btn.classList.toggle('pause'); btn.classList.toggle('play') });
+        document.getElementById('toggle').addEventListener('click', function () { var btn = document.getElementById('toggle'); if (!running) { interval = setInterval(function () { tick() }, 1000); btn.style.content = "url(/tomodoro/Content/pause.png)"; } else { clearInterval(interval); btn.style.content = "url(./Content/play.png)"; } running = !running; btn.classList.toggle('pause'); btn.classList.toggle('play') });
     }());
     function tick() {
         s--;
