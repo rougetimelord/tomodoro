@@ -4,14 +4,9 @@ document.addEventListener('DOMContentLoaded', function ()
     var link = document.getElementById('aboutLink');
     link.addEventListener('click', function () {
         var r = Math.floor((Math.random() * 10) + 1);
-        switch (r) {
-            case (1):
-                window.open("https://youtu.be/dQw4w9WgXcQ", '_blank');
-                break;
-            default:
-                (!shown) ? (about.show(), shown = true) : (about.hide(), shown = false);
-                break;
-        }
+        if (r==1)
+            window.open("https://youtu.be/dQw4w9WgXcQ", '_blank');
+        (!shown) ? (about.show(), shown = true) : (about.hide(), shown = false);
     }, 'false')
     var count = 0;
     window.addEventListener("keyup", function (e) { count = keyPress(e, count); });
