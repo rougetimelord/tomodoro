@@ -1,24 +1,25 @@
 CACHE MANIFEST
-# 2016-4-5 v0.0.1.6if_fix_beta
+# 2016-5-2 v0.0.2_sw_beta
 # Add beta flag
 /tomodoro/beta/about_beta.js
 /tomodoro/beta/clock_beta.js
+/tomodoro/beta/sw.js
 /tomodoro/beta/index_beta.css
 /tomodoro/Content/break.mp3
-/tomodoro/Content/work.mp3
-/tomodoro/Content/icon.png
 /tomodoro/Content/clock.png
-/tomodoro/Content/mute.png
-/tomodoro/Content/play.png
-/tomodoro/Content/pause.png
-/tomodoro/Content/mute_hover.png
-/tomodoro/Content/play_hover.png
-/tomodoro/Content/pause_hover.png
-/tomodoro/Content/mute_active.png
-/tomodoro/Content/play_active.png
-/tomodoro/Content/pause_active.png
-/tomodoro/Content/heman.gif
 /tomodoro/Content/frog.png
+/tomodoro/Content/heman.gif
+/tomodoro/Content/icon.png
+/tomodoro/Content/mute.png
+/tomodoro/Content/mute_active.png
+/tomodoro/Content/mute_hover.png
+/tomodoro/Content/pause.png
+/tomodoro/Content/pause_active.png
+/tomodoro/Content/pause_hover.png
+/tomodoro/Content/play.png
+/tomodoro/Content/play_active.png
+/tomodoro/Content/play_hover.png
+/tomodoro/Content/work.mp3
 
 
 NETWORK:
