@@ -7,10 +7,7 @@
     <script src="./clock_beta.js" async></script>
     <script src="./about_beta.js" ></script>
     <script>
-        /* Commented out because cache manifest still being used
-        Will be activated when service worker gets better code
-        // register service worker
-        if ('serviceWorker' in navigator) {
+        if ('serviceWorker' in navigator && window.location.protocol != "https") {
             navigator.serviceWorker.register('/tomodoro/beta/sw.js', { scope: '/tomodoro/beta' }).then(function (reg) {
 
                 if (reg.installing) {
@@ -26,10 +23,10 @@
                 console.log('Registration failed with ' + error);
             });
         };
-        */
     </script>
 </head>
     <body>
+        <p id="proto"></p>
         <p id="disp">0:15</p>
         <p id="txt">First grace period, get ready to work</p>
         <div id="buttons">
