@@ -18,3 +18,4 @@ a:link{text-decoration:none;}
 a:visited{text-decoration:none;}
 a:hover{text-decoration:none;color:#ff0606;}
 a:active{text-decoration:none;color:#ffbdbd;}
+#proto {height: 0px;text-align: center;}

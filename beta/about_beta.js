@@ -8,6 +8,12 @@ document.addEventListener('DOMContentLoaded', function ()
             window.open("https://youtu.be/dQw4w9WgXcQ", '_blank');
         (!shown) ? (about.show(), shown = true) : (about.hide(), shown = false);
     }, 'false')
+    if (window.location.protocol != "https")
+    {
+        var protoP = document.getElementById('proto');
+        protoP.innerHTML = "Please use https for Caching";
+        protoP.style.height = "auto";
+    }
     var count = 0;
     window.addEventListener("keyup", function (e) { count = keyPress(e, count); });
     window.addEventListener('beforeunload', function (e) {
