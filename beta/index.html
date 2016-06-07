@@ -7,8 +7,8 @@
     <script src="./clock_beta.js" async></script>
     <script src="./about_beta.js" ></script>
     <script>
-        if ('serviceWorker' in navigator && window.location.protocol != "https") {
-            navigator.serviceWorker.register('/tomodoro/beta/sw.js', { scope: '/tomodoro/beta' }).then(function (reg) {
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/tomodoro/beta/sw.js', { scope: '/tomodoro/' }).then(function (reg) {
 
                 if (reg.installing) {
                     console.log('Service worker installing');
