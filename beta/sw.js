@@ -41,8 +41,8 @@ self.addEventListener('fetch', function(event) {
         return caches.open('v2').then(function(cache) {
           cache.put(event.request, response.clone());
           return response;
-        });
-      });
-    });
-  );
+        })
+      })
+    })
+   );
 });
