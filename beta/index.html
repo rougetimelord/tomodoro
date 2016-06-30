@@ -8,21 +8,14 @@
     <script src="./about_beta.js" ></script>
     <script>
         if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('/tomodoro/beta/sw.js', { scope: '/tomodoro/' }).then(function (reg) {
-
+            navigator.serviceWorker.register('/tomodoro/beta/sw.js', { scope: '/tomodoro/beta' }).then(function (reg) {
                 if (reg.installing) {
                     console.log('Service worker installing');
                 } else if (reg.waiting) {
                     console.log('Service worker installed');
                 } else if (reg.active) {
                     console.log('Service worker active');
-                }
-
-            }).catch(function (error) {
-                // registration failed
-                console.log('Registration failed with ' + error);
-            });
-        };
+                }}).catch(function (error) {console.log('Registration failed with ' + error);});};
     </script>
 </head>
     <body>
