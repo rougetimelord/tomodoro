@@ -2,22 +2,22 @@ this.addEventListener('install', function (event) {
     event.waitUntil(
       caches.open('v1').then(function (cache) {
           return cache.addAll([
-            './about.js',
-            './clock.js',
-            './index.css',
-            '/Content/break.mp3',
-            '/Content/work.mp3',
-            '/Content/icon.png',
-            '/Content/clock.png',
-            '/Content/mute.png',
-            '/Content/play.png',
-            '/Content/pause.png',
-            '/Content/mute_hover.png',
-            '/Content/play_hover.png',
-            '/Content/pause_hover.png',
-            '/Content/mute_active.png',
-            '/Content/play_active.png',
-            '/Content/pause_active.png'
+            './about_beta.js',
+            './clock_beta.js',
+            './index_beta.css',
+            '/tomodoro/Content/break.mp3',
+            '/tomodoro/Content/work.mp3',
+            '/tomodoro/Content/icon.png',
+            '/tomodoro/Content/clock.png',
+            '/tomodoro/Content/mute.png',
+            '/tomodoro/Content/play.png',
+            '/tomodoro/Content/pause.png',
+            '/tomodoro/Content/mute_hover.png',
+            '/tomodoro/Content/play_hover.png',
+            '/tomodoro/Content/pause_hover.png',
+            '/tomodoro/Content/mute_active.png',
+            '/tomodoro/Content/play_active.png',
+            '/tomodoro/Content/pause_active.png'
           ]);
       })
     );
