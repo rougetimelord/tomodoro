@@ -35,15 +35,10 @@ this.addEventListener('activate', function (event) {
       })
     );
 });
-this.addEventListener('fetch', function(event) {
-    event.respondWith(
-      caches.match(event.request).catch(function () {
-          return fetch(event.request).then(function (response) {
-              return caches.open('v1').then(function (cache) {
-                  cache.put(event.request, response.clone());
-                  return response;
-              })
-          })
-      })
-      );
+self.addEventListener('fetch', function(event) {
+  event.respondWith(
+    caches.match(event.request).then(function(response) {
+      return response || new Response("Nothing in the cache for this request");
+    })
+  );
 });
