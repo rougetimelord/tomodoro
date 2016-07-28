@@ -1,6 +1,7 @@
+var version = 'v2.0.1';
 this.addEventListener('install', function (event) {
     event.waitUntil(
-      caches.open('v2').then(function (cache) {
+      caches.open(version).then(function (cache) {
           return cache.addAll([
             './about_beta.js',
             './clock_beta.js',
@@ -23,7 +24,7 @@ this.addEventListener('install', function (event) {
     );
 });
 this.addEventListener('activate', function (event) {
-    var cacheWhitelist = ['v2'];
+    var cacheWhitelist = [version];
     event.waitUntil(
       caches.keys().then(function (keyList) {
           return Promise.all(keyList.map(function (key) {
@@ -38,7 +39,7 @@ self.addEventListener('fetch', function(event) {
   event.respondWith(
     caches.match(event.request).then(function(response) {
       return response || fetch(event.request).then(function(response) {
-        return caches.open('v2').then(function(cache) {
+        return caches.open(version).then(function(cache) {
           cache.put(event.request, response.clone());
           return response;
         })
